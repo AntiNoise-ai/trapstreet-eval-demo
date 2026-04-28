@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# Data is pulled at runtime — license is CC-BY-NC-4.0 (PatronusAI/FinanceBench)
+data/financebench/
+data/subset.jsonl
+
+# Generated results
+results/*.json
+results/*.md
+!results/.gitkeep

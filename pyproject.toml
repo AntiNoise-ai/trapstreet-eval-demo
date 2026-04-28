@@ -1,0 +1,31 @@
+[project]
+name = "trapstreet-eval-demo"
+version = "0.1.0"
+description = "AntiNoise eval demo — clone, run, see how your agent compares on FinanceBench"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.39.0",
+    "openai>=1.50.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.7.0",
+    "tqdm>=4.66.0",
+]
+
+[project.optional-dependencies]
+pdf = ["pypdf>=4.0.0"]
+dev = ["pytest>=8.0.0", "ruff>=0.5.0"]
+
+[project.scripts]
+trapstreet-eval = "trapstreet_eval.runner:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["trapstreet_eval"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
